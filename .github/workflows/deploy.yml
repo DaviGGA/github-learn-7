@@ -13,7 +13,7 @@ jobs:
         id: cache-deps
         uses: ./.github/actions/cached-
       - name: Output information
-        run: echo "Cache used? ${{ cache-deps.outputs.used-cache }}"
+        run: echo "Cache used? ${{ steps.cache-deps.outputs.used-cache }}"
       - name: Install dependencies
         if: steps.cache.outputs.cache-hit != 'true'
         run: npm ci
